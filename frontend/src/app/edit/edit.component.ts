@@ -37,23 +37,16 @@ export class EditComponent implements OnInit {
         };
         if (this.id) {
             this.taskService.changeTask(nTask, this.id).subscribe(data => {
+                this.taskService.shareTask({id: null, description: '', date: '', progress: null});
                 this.showList();
-                this.description = '';
-                this.date = '';
-                this.progress = null;
             });
         } else {
             this.taskService.addTask(nTask).subscribe(data => {
+                this.taskService.shareTask({id: null, description: '', date: '', progress: null});
                 this.showList();
-                this.description = '';
-                this.date = '';
-                this.progress = null;
             });
         }
-        this.id = null;
-        this.description = '';
-        this.date = '';
-        this.progress = null;
+
     }
 
 
