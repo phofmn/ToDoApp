@@ -1,0 +1,18 @@
+{
+  "name": "todobackend",
+  "version": "1.0.0",
+  "description": "MEAN",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Erro r: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "^2.8.5",
+    "express": "*",
+    "mongoose": "*"
+  },
+  "author": "",
+  "license": "ISC"
+}

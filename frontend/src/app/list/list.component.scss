@@ -1,0 +1,23 @@
+.show-icon {
+  opacity: 0;
+}
+
+.show-icon:hover {
+  cursor: pointer;
+}
+
+.entry:hover {
+  background-color: rgba(23, 48, 85, 0.18);
+}
+
+.entry:hover .show-icon {
+  opacity: 1;
+}
+
+.oi-delete:hover {
+  color: #D00808;
+}
+
+.oi-pencil:hover {
+  color: #4ea700;
+}

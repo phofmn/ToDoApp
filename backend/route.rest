@@ -1,0 +1,35 @@
+GET http://localhost:300/api/tasks/
+
+###
+
+POST http://localhost:300/api/tasks/
+Content-Type: application/json
+
+{
+  "description": "implement backend",
+  "date": "24.05.2020",
+  "progress": "80"
+}
+
+###
+
+POST http://localhost:300/api/tasks/
+Content-Type: application/json
+
+{
+  "description": "implement frontend",
+  "date": "25.05.2020",
+  "progress": "70"
+}
+
+###
+
+GET http://localhost:300/api/tasks/5eca52d46b88440b19e0a1f5
+
+###
+
+
+DELETE http://localhost:300/api/tasks/5eca4e0a0b9ff90ac1ec41f4
+
+###
+

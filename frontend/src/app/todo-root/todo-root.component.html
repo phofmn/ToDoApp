@@ -1,0 +1,26 @@
+<div class="root-container d-flex justify-content-center align-items-center">
+    <div id="app-container" class="container">
+        <div class="side-bar">
+      <span (click)="showList()" class="dot">
+        <span class="oi oi-list icon"></span>
+      </span>
+            <span (click)="showEdit()" class="dot">
+        <span class="oi oi-plus icon"></span>
+      </span>
+            <span (click)="showInfo()" class="dot icon">i</span>
+        </div>
+        <div class="todo-content">
+            <div class="title-wrapper">
+                <h1 class="title">ToDoList</h1>
+            </div>
+            <div class="seperator-wrapper">
+                <span class="seperator"></span>
+            </div>
+            <div class="content-wrapper">
+                <app-list *ngIf="!hideList"></app-list>
+                <app-edit *ngIf="!hideEdit"></app-edit>
+                <app-info *ngIf="!hideInfo"></app-info>
+            </div>
+        </div>
+    </div>
+</div>
