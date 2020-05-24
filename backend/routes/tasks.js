@@ -3,7 +3,7 @@ const router = express.Router()
 const Tasks = require('../models/task')
 
 /*
-  GET  ALL TASKS
+  GET ALL TASKS
  */
 router.get('/', async (req, res) => {
     try {
@@ -39,12 +39,30 @@ router.post('/', async (req, res) => {
 })
 
 /*
+    CHANGE TASK
+ */
+router.post('/:id', getTask, async (req, res) => {
+    const task = new Tasks({
+        description: req.body.description,
+        date: req.body.date,
+        progress: req.body.progress,
+    })
+    res.task = task;
+    try {
+        await res.task.save()
+        res.json({message: 'updated task: ' + req.params.id})
+    } catch (err) {
+        res.status(400).json({message: err.message})
+    }
+})
+
+/*
   DELETE ROUTE
  */
 router.delete('/:id', getTask, async (req, res) => {
     try {
         await res.task.remove()
-        res.json({message: 'Deleted Task'})
+        res.json({message: 'deleted task: ' + req.params.id})
     } catch (err) {
         res.status(500).json({message: err.message})
     }

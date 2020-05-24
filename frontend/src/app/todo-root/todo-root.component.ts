@@ -17,6 +17,19 @@ export class TodoRootComponent implements OnInit {
     ngOnInit() {
     }
 
+
+    get callShowList() {
+        return this.showList.bind(this);
+    }
+
+    get callShowEdit() {
+        return this.showEdit.bind(this);
+    }
+
+    get callShowInfo() {
+        return this.showInfo.bind(this);
+    }
+
     showList() {
         this.hideList = false;
         this.hideEdit = true;

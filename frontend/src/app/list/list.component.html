@@ -12,49 +12,13 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="entry">
-                <th scope="row">1</th>
-                <td>Design Prototype</td>
-                <td>01.05.2020</td>
-                <td>100</td>
-                <td><span onclick="edit(this)" class="show-icon oi oi-pencil"></span></td>
-                <td><span onclick="deleteEntry(this)" class="show-icon oi oi-delete"></span>
-                </td>
-            </tr>
-            <tr class="entry">
-                <th scope="row">2</th>
-                <td>Create Repository</td>
-                <td>01.05.2020</td>
-                <td>100</td>
-                <td><span onclick="edit(this)" class="show-icon oi oi-pencil"></span></td>
-                <td><span onclick="deleteEntry(this)" class="show-icon oi oi-delete"></span>
-                </td>
-            </tr>
-            <tr class="entry">
-                <th scope="row">3</th>
-                <td>Implement HTML structure</td>
-                <td>01.05.2020</td>
-                <td>90</td>
-                <td><span onclick="edit(this)" class="show-icon oi oi-pencil"></span></td>
-                <td><span onclick="deleteEntry(this)" class="show-icon oi oi-delete"></span>
-                </td>
-            </tr>
-            <tr class="entry">
-                <th scope="row">4</th>
-                <td>Implement styling</td>
-                <td>01.05.2020</td>
-                <td>90</td>
-                <td><span onclick="edit(this)" class="show-icon oi oi-pencil"></span></td>
-                <td><span onclick="deleteEntry(this)" class="show-icon oi oi-delete"></span>
-                </td>
-            </tr>
-            <tr class="entry">
-                <th scope="row">5</th>
-                <td>Implement business logic</td>
-                <td>01.05.2020</td>
-                <td>90</td>
-                <td><span onclick="edit(this)" class="show-icon oi oi-pencil"></span></td>
-                <td><span onclick="deleteEntry(this)" class="show-icon oi oi-delete"></span>
+            <tr *ngFor="let task of tasks; index as i" class="entry">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{task.description}}</td>
+                <td>{{task.date}}</td>
+                <td>{{task.progress}}</td>
+                <td><span (click)="edit(task)" class="show-icon oi oi-pencil"></span></td>
+                <td><span (click)="deleteEntry(task)" class="show-icon oi oi-delete"></span>
                 </td>
             </tr>
             </tbody>

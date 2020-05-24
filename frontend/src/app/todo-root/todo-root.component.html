@@ -17,9 +17,9 @@
                 <span class="seperator"></span>
             </div>
             <div class="content-wrapper">
-                <app-list *ngIf="!hideList"></app-list>
-                <app-edit *ngIf="!hideEdit"></app-edit>
-                <app-info *ngIf="!hideInfo"></app-info>
+                <app-list [showList]="callShowList" [showEdit]="callShowEdit" *ngIf="!hideList"></app-list>
+                <app-edit [showEdit]="callShowEdit" [showList]="callShowList" *ngIf="!hideEdit"></app-edit>
+                <app-info [showInfo]="callShowInfo" *ngIf="!hideInfo"></app-info>
             </div>
         </div>
     </div>
