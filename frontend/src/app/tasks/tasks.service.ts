@@ -38,7 +38,7 @@ export class TasksService {
     }
 
     public changeTask(task, taskId): Observable<any> {
-        return this.http.post(`${this.url}${taskId}`, task);
+        return this.http.patch(`${this.url}${taskId}`, task);
     }
 
     public shareTask(t: any) {

@@ -41,15 +41,13 @@ router.post('/', async (req, res) => {
 /*
     CHANGE TASK
  */
-router.post('/:id', getTask, async (req, res) => {
-    const task = new Tasks({
-        description: req.body.description,
-        date: req.body.date,
-        progress: req.body.progress,
-    })
-    res.task = task;
+router.patch('/:id', getTask, async (req, res) => {
+    res.task.description = req.body.description
+    res.task.date = req.body.date
+    res.task.progress = req.body.progress
+
     try {
-        await res.task.save()
+        const updateTask = await res.task.save()
         res.json({message: 'updated task: ' + req.params.id})
     } catch (err) {
         res.status(400).json({message: err.message})

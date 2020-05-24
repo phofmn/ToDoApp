@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TasksService} from "../tasks/tasks.service";
-import {BehaviorSubject} from "rxjs";
 
 @Component({
     selector: 'app-edit',
@@ -36,14 +35,25 @@ export class EditComponent implements OnInit {
             date: this.date,
             progress: this.progress
         };
-        debugger
         if (this.id) {
-            this.taskService.changeTask(nTask, this.id).subscribe();
+            this.taskService.changeTask(nTask, this.id).subscribe(data => {
+                this.showList();
+                this.description = '';
+                this.date = '';
+                this.progress = null;
+            });
         } else {
-            this.taskService.addTask(nTask).subscribe();
+            this.taskService.addTask(nTask).subscribe(data => {
+                this.showList();
+                this.description = '';
+                this.date = '';
+                this.progress = null;
+            });
         }
         this.id = null;
-        this.showList();
+        this.description = '';
+        this.date = '';
+        this.progress = null;
     }
 
 
