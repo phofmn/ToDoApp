@@ -39,12 +39,15 @@
 #submit-button:hover {
   background-color: #018E10;
   color: white;
+
+}
+
+th {
+  white-space: nowrap
 }
 
 td {
   word-break: break-word;
 }
 
-th {
-  white-space: nowrap
-}
+
