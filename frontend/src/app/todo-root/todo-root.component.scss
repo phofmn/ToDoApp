@@ -4,9 +4,9 @@
 }
 
 #app-container {
-  height: 50vw;
-  max-height: 600px;
-  max-width: 900px;
+  height: 60vw;
+  max-height: 800px;
+  max-width: 1200px;
   background-color: #FFFFFF;
   box-shadow: 0 6px 28px 0 rgba(24, 52, 117, 0.2);
   padding-left: 0px;
@@ -32,8 +32,8 @@
 }
 
 .dot {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background-color: #bbb;
   border-radius: 50%;
   display: flex;
