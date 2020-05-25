@@ -1,2 +1,2 @@
 # ToDoApp
- Scalable Systems MEAN ToDo App
+ Scalable Systems MEAN stack ToDo App
