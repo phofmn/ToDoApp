@@ -11,10 +11,6 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
-// app.use((req, res) => {
-//   res.header('Access-Control-Allow-Origin', '*')
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
-// })
 
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection

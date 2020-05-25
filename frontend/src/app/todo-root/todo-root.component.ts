@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {TasksService} from "../tasks/tasks.service";
 
 @Component({
     selector: 'app-todo-root',
@@ -11,7 +12,7 @@ export class TodoRootComponent implements OnInit {
     hideEdit = true;
     hideInfo = true;
 
-    constructor() {
+    constructor(private taskService: TasksService) {
     }
 
     ngOnInit() {
@@ -31,6 +32,7 @@ export class TodoRootComponent implements OnInit {
     }
 
     showList() {
+        this.taskService.shareTask({id: null, description: '', date: '', progress: null});
         this.hideList = false;
         this.hideEdit = true;
         this.hideInfo = true;
@@ -43,6 +45,7 @@ export class TodoRootComponent implements OnInit {
     }
 
     showInfo() {
+        this.taskService.shareTask({id: null, description: '', date: '', progress: null});
         this.hideList = true;
         this.hideEdit = true;
         this.hideInfo = false;
